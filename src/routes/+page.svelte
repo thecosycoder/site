@@ -1,5 +1,5 @@
 <section class="container mx-auto px-4">
-	<h1 class="text-3xl font-bold underline">
+	<h1 class="text-3xl">
 		Hello world!
 	</h1>
 	<p>Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Tortor dignissim convallis aenean et tortor. Ac felis donec et odio pellentesque diam volutpat commodo sed. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Augue lacus viverra vitae congue eu. Justo laoreet sit amet cursus. Etiam erat velit scelerisque in dictum non consectetur. Nisi quis eleifend quam adipiscing vitae proin sagittis. Elit sed vulputate mi sit. Nibh mauris cursus mattis molestie a iaculis at.</p>
@@ -7,5 +7,23 @@
 	<p>Ante in nibh mauris cursus mattis molestie a. Senectus et netus et malesuada fames ac turpis. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Nisl rhoncus mattis rhoncus urna neque. Diam quis enim lobortis scelerisque fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Id cursus metus aliquam eleifend mi in nulla posuere. Ut porttitor leo a diam sollicitudin. Elementum curabitur vitae nunc sed. Leo a diam sollicitudin tempor id. In nibh mauris cursus mattis molestie. Convallis posuere morbi leo urna molestie at elementum eu facilisis. Mattis pellentesque id nibh tortor id aliquet.</p>
 	<p>Lobortis scelerisque fermentum dui faucibus. Donec enim diam vulputate ut. Arcu non odio euismod lacinia at quis risus sed. Semper viverra nam libero justo laoreet sit amet. Amet consectetur adipiscing elit ut aliquam purus sit amet luctus. Quis blandit turpis cursus in hac habitasse platea. Turpis in eu mi bibendum neque egestas congue quisque egestas. Nulla facilisi cras fermentum odio eu. Nisl nunc mi ipsum faucibus vitae aliquet. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl.</p>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac tortor vitae purus faucibus ornare. Viverra ipsum nunc aliquet bibendum enim facilisis. Magna ac placerat vestibulum lectus mauris ultrices eros in. Convallis convallis tellus id interdum velit. Vitae purus faucibus ornare suspendisse sed nisi lacus. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Imperdiet nulla malesuada pellentesque elit eget. Sed arcu non odio euismod lacinia at quis risus sed. Sit amet nisl suscipit adipiscing bibendum est.</p>
+	<code>hello</code>
 </section>
 
+<style lang="postcss">
+	:global(html) {
+	  background-color: theme(colors.cream);
+	}
+
+	:global(main, div, p, a, label, input, button) {
+		font-family: theme(fontFamily.sans);
+	}
+
+	:global(h1, h2, h3, h4, h5, h6) {
+		font-family: theme(fontFamily.serif);
+	}
+
+	:global(code, pre) {
+		font-family: theme(fontFamily.mono);
+	}
+</style>

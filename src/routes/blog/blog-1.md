@@ -8,4 +8,15 @@ tags:
 
 Hello, I am _Post One._
 
+```javascript
+let n = 1;
+
+function adding() {
+  let x = n + 10;
+  return x;
+}
+
+console.log(x);
+```
+
 **Nice to meet you!**
