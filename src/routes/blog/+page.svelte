@@ -1,6 +1,13 @@
 <script>
-export let data;
-const { posts } = data;
+import { onMount } from 'svelte'; 
+
+let posts = [];
+
+onMount(async () => {
+	const res = await fetch(`/api/posts`);
+	posts = await res.json();
+});
+
 </script>
 
 <section>
