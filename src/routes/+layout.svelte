@@ -4,7 +4,7 @@
   import Header from '$components/Header.svelte';
   import Footer from '$components/Footer.svelte';
 
-	import { fly } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import { quartIn, quadOut } from 'svelte/easing';
 
   export let data;
@@ -12,7 +12,7 @@
 
 <Header />
 {#key data.currentRoute}
-<main in:fly={{ duration: 220, delay: 240, y: 10, ease: quartIn }} out:fly={{ duration: 200, y: -10, ease: quadOut }}>
+<main in:fly={{ duration: 220, delay: 120, y: 10, ease: quartIn }} out:fade={{ duration: 100, ease: quadOut }}>
 	<slot />
 </main>
 {/key}

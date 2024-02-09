@@ -3,7 +3,7 @@
 	const { title, date, tags, Content } = data;
 </script>
 
-<article>
+<article class="w-full">
 	<h1>{title}</h1>
 	<p>Published: {date}</p>
 	<Content />
