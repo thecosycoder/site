@@ -1,9 +1,9 @@
 ---
 title: Post One
-date: '2023-01-30'
+date: "2023-01-30"
 tags:
-  - 'numbers'
-  - 'even'
+  - "numbers"
+  - "even"
 ---
 
 Hello, I am _Post One._

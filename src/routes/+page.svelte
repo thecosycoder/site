@@ -9,21 +9,3 @@
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac tortor vitae purus faucibus ornare. Viverra ipsum nunc aliquet bibendum enim facilisis. Magna ac placerat vestibulum lectus mauris ultrices eros in. Convallis convallis tellus id interdum velit. Vitae purus faucibus ornare suspendisse sed nisi lacus. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Imperdiet nulla malesuada pellentesque elit eget. Sed arcu non odio euismod lacinia at quis risus sed. Sit amet nisl suscipit adipiscing bibendum est.</p>
 	<code>hello</code>
 </section>
-
-<style lang="postcss">
-	:global(html) {
-	  background-color: theme(colors.cream);
-	}
-
-	:global(main, div, p, a, label, input, button) {
-		font-family: theme(fontFamily.sans);
-	}
-
-	:global(h1, h2, h3, h4, h5, h6) {
-		font-family: theme(fontFamily.serif);
-	}
-
-	:global(code, pre) {
-		font-family: theme(fontFamily.mono);
-	}
-</style>

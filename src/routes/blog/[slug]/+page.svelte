@@ -19,7 +19,7 @@
 					</a>
 				</li>
 			{/each}
-		</ul>
+  		</ul>
 	</aside>
   {/if}
 </article>
