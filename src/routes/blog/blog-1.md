@@ -1,9 +1,9 @@
 ---
-title: Post One
-date: "2023-01-30"
+title: A Blog Post About Coding
+date: '2023-01-30'
 tags:
-  - "numbers"
-  - "even"
+  - 'numbers'
+  - 'even'
 ---
 
 Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Augue neque gravida in fermentum et sollicitudin ac orci. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Vivamus arcu felis bibendum ut. Urna porttitor rhoncus dolor purus non. Dictum sit amet justo donec enim diam vulputate. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. In egestas erat imperdiet sed.
@@ -54,6 +54,8 @@ else:
   - this list is indented
   - so it this one
 - this is back to normal
+
+---
 
 1. number 1
 2. here is another list item Lacus viverra vitae congue eu consequat ac felis.

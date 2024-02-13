@@ -3,9 +3,14 @@
   const { title, date, tags, Content } = data;
 </script>
 
-<article class="article max-w-lg w-full mx-auto">
-  <h1>{title}</h1>
-  <p>Published: {date}</p>
+<header class="bg-brandeis">
+	<section class="container mx-auto p-16">
+		<h1 class="text-8xl text-platinum">{title}</h1>
+		<p class="text-platinum">Published: {date}</p>
+	</section>
+</header>
+
+<article class="article max-w-xl w-full mx-auto">
   <Content />
 
   {#if tags.length}

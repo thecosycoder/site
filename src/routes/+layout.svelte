@@ -20,7 +20,7 @@
 
 <style lang="postcss">
 	:global(html) {
-	  background-color: theme(colors.cream);
+	  background-color: theme(colors.platinum);
 	}
 
 	:global(main, div, p, a, li, label, input, button) {

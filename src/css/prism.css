@@ -1,5 +1,5 @@
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   line-height: 1.4;
   direction: ltr;
   text-align: left;
@@ -14,21 +14,21 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  background: #100b00;
+  background: #353a47;
   color: #f3f7f0;
   border-radius: 4px;
 }
 
-pre[class*="language-"]::selection,
-code[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"] ::selection,
-pre[class*="language-"]::-moz-selection,
-code[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-code[class*="language-"] ::-moz-selection {
+pre[class*='language-']::selection,
+code[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-'] ::selection,
+pre[class*='language-']::-moz-selection,
+code[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-'] ::-moz-selection {
   text-shadow: none;
-  background: #2f52e0;
+  background: #848fa5;
 }
 
 .token.comment,
@@ -48,7 +48,7 @@ code[class*="language-"] ::-moz-selection {
 
 .token.tag,
 .token.operator {
-  color: #ff715b;
+  color: #ef8354;
 }
 
 .token.property,
@@ -91,7 +91,7 @@ code.language-scss,
 .token.statement,
 .token.regex,
 .token.atrule {
-  color: #ff715b;
+  color: #ef8354;
 }
 .token.deleted {
   text-decoration: line-through;
@@ -130,32 +130,32 @@ pre {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   padding: 3rem 1rem 1rem;
   margin: 1.5rem 0;
   overflow: auto;
 }
 
-pre[class="language-undefined"] {
+pre[class='language-undefined'] {
   padding: 1rem 1rem;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code[class*='language-'] {
   padding: 0.1em;
   border-radius: 0.3em;
 }
 
 /* Language Display */
-pre[class*="language-"]:before {
+pre[class*='language-']:before {
   position: absolute;
-  content: "Code";
+  content: 'Code';
   top: 0;
   left: 0;
   width: 100%;
   padding: 0.5rem 1rem;
-  background: linear-gradient(to right, #2f52e0, #2f52e000);
-  font-family: "Karla Variable";
+  background: linear-gradient(to right, #848fa5, #848fa500);
+  font-family: 'Karla Variable';
   font-weight: 600;
   border-radius: 4px 4px 0 0;
 }
@@ -165,35 +165,35 @@ pre.language-undefined:before {
 }
 pre.language-bash:before,
 pre.language-terminal:before {
-  content: "Terminal";
+  content: 'Terminal';
 }
 pre.language-fs:before {
-  content: "Project files";
+  content: 'Project files';
 }
 pre.language-css:before {
-  content: "CSS";
+  content: 'CSS';
 }
 pre.language-php:before {
-  content: "PHP";
+  content: 'PHP';
 }
 pre.language-markdown:before,
 pre.language-md:before {
-  content: "Markdown";
+  content: 'Markdown';
 }
 pre.language-html:before {
-  content: "HTML";
+  content: 'HTML';
 }
 pre.language-vue:before {
-  content: "Vue";
+  content: 'Vue';
 }
 pre.language-svelte:before {
-  content: "Svelte";
+  content: 'Svelte';
 }
 pre.language-js:before,
 pre.language-javascript:before {
-  content: "JavaScript";
+  content: 'JavaScript';
 }
 
 pre.language-python:before {
-  content: "Python";
+  content: 'Python';
 }
