@@ -1,9 +1,10 @@
 ---
-title: A Blog Post About Coding
-date: '2023-01-30'
+title: A Blog Post About Coding with an extra long title
+date: "2023-01-30"
+update: "2024-10-10"
 tags:
-  - 'numbers'
-  - 'even'
+  - "front-end"
+  - "svelte"
 ---
 
 Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Augue neque gravida in fermentum et sollicitudin ac orci. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Vivamus arcu felis bibendum ut. Urna porttitor rhoncus dolor purus non. Dictum sit amet justo donec enim diam vulputate. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. In egestas erat imperdiet sed.

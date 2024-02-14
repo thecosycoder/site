@@ -1,9 +1,10 @@
 ---
 title: Blogging About Coding
-date: '2023-02-01'
+date: "2023-02-01"
 tags:
-  - 'numbers'
-  - 'odd'
+  - "front-end"
+  - "developement"
+  - "tag"
 ---
 
 # This is a blog
