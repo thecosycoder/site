@@ -1,5 +1,5 @@
 export const fetchMarkdownPosts = async () => {
-  const allPostFiles = import.meta.glob("/src/routes/blog/*.md");
+  const allPostFiles = import.meta.glob('/src/routes/blog/*.md');
   const iterablePostFiles = Object.entries(allPostFiles);
 
   const allPosts = await Promise.all(
@@ -9,7 +9,7 @@ export const fetchMarkdownPosts = async () => {
 
       return {
         meta: metadata,
-        path: postPath,
+        path: postPath
       };
     })
   );
@@ -18,7 +18,7 @@ export const fetchMarkdownPosts = async () => {
 };
 
 export const fetchTopRoutes = async () => {
-  const topRoutes = import.meta.glob("/src/routes/*/+page.svelte");
+  const topRoutes = import.meta.glob('/src/routes/*/+page.svelte');
   const iterableTopRoutes = Object.entries(topRoutes);
 
   const allUrls = await Promise.all(
@@ -26,7 +26,7 @@ export const fetchTopRoutes = async () => {
       const url = path.slice(12, -13);
 
       return {
-        path: url,
+        path: url
       };
     })
   );

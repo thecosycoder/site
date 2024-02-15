@@ -105,7 +105,3 @@
 .article ul ul li::marker {
   @apply text-coral;
 }
-
-.article hr {
-  @apply border-cool-grey;
-}
