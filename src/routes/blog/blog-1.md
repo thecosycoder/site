@@ -1,10 +1,10 @@
 ---
 title: A Blog Post About Coding with an extra long title
-date: "2023-01-30"
-update: "2024-10-10"
+date: '2023-01-30'
+update: '2024-10-10'
 tags:
-  - "front-end"
-  - "svelte"
+  - 'front-end'
+  - 'svelte'
 ---
 
 Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Augue neque gravida in fermentum et sollicitudin ac orci. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Vivamus arcu felis bibendum ut. Urna porttitor rhoncus dolor purus non. Dictum sit amet justo donec enim diam vulputate. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. In egestas erat imperdiet sed.
@@ -22,7 +22,7 @@ function adding() {
 console.log(x);
 ```
 
-## This is a h2
+## This is a h2 with a longer title that moves onto two lines
 
 Arcu non sodales neque sodales ut etiam. Velit egestas dui id ornare arcu odio. Enim nec dui nunc mattis enim ut tellus elementum sagittis. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi. In nisl nisi scelerisque eu ultrices vitae auctor.
 

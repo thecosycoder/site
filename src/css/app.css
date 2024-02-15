@@ -1,7 +1,7 @@
-@import "@fontsource-variable/karla";
-@import "@fontsource/dm-serif-display";
-@import "@fontsource/courier-prime";
-@import "prism.css";
+@import '@fontsource-variable/karla';
+@import '@fontsource/dm-serif-display';
+@import '@fontsource/courier-prime';
+@import 'prism.css';
 
 @tailwind base;
 @tailwind components;
@@ -19,7 +19,34 @@
 .article h4,
 .article h5,
 .article h6 {
-  @apply mt-10 mb-6;
+  @apply relative mt-10 mb-6 px-2;
+}
+
+.article h1::before,
+.article h2::before,
+.article h3::before,
+.article h4::before,
+.article h5::before,
+.article h6::before {
+  @apply content-[''] block absolute bottom-0 left-0 -z-10 w-1/2 max-h-4 h-1/2 bg-gradient-to-r from-coral;
+}
+
+.article h1 .icon::before,
+.article h2 .icon::before,
+.article h3 .icon::before,
+.article h4 .icon::before,
+.article h5 .icon::before,
+.article h6 .icon::before {
+  @apply content-["#"] hidden absolute block top-0 right-0 text-brandeis;
+}
+
+.article h1:hover .icon::before,
+.article h2:hover .icon::before,
+.article h3:hover .icon::before,
+.article h4:hover .icon::before,
+.article h5:hover .icon::before,
+.article h6:hover .icon::before {
+  @apply block;
 }
 
 .article h1:first-child,
