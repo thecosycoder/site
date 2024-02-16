@@ -1,6 +1,6 @@
 <script>
-  import { onMount } from "svelte";
-  import { formatDate } from "$lib/utils/formatting.js";
+  import { onMount } from 'svelte';
+  import { formatDate } from '$lib/utils/formatting.js';
   export let data;
   const { title, date, update, tags, Content } = data;
 
@@ -8,7 +8,7 @@
 
   onMount(async () => {
     const headings = document.querySelectorAll(
-      ".article h1, .article h2, .article h3, .article h4"
+      '.article h1, .article h2, .article h3, .article h4'
     );
 
     tocEntries = headings;
@@ -23,9 +23,7 @@
 
 <header class="bg-brandeis">
   <section class="max-w-6xl w-full mx-auto px-4 py-12 md:py-16">
-    <h1
-      class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl text-platinum capitalize"
-    >
+    <h1 class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl text-platinum capitalize">
       {title}
     </h1>
 
@@ -55,26 +53,40 @@
   </section>
 </header>
 
-<section class="container mx-auto">
-  <aside class="sticky top-24 ml-auto mt-8 mr-8 h-0 max-w-xs w-full">
-    <div
-      class="py-2 px-4 text-platinum bg-gradient-to-r from-cool-grey rounded-t"
+<section class="mt-8 mx-auto xl:container">
+  {#if tocEntries.length}
+    <aside
+      class="max-w-xl w-full mb-8 mx-auto px-4 xl:sticky xl:top-24 xl:mb-0 xl:ml-auto xl:mr-none xl:mr-8 xl:h-0 xl:max-w-xs"
     >
-      <h2 class="font-sans font-semibold">Navigation</h2>
-    </div>
-    <ul class="py-2 px-4">
-      {#each tocEntries as tocEntry}
-        <li>
-          <a
-            class="toc-entry toc-{tocEntry.tagName.toLowerCase()} text-charcoal text-sm"
-            href="#{tocEntry.id}">{tocEntry.innerText}</a
-          >
-        </li>
-      {/each}
-    </ul>
-  </aside>
+      <div class="py-2 px-4 text-platinum bg-gradient-to-r from-cool-grey rounded-t">
+        <h2 class="font-sans font-semibold">Navigation</h2>
+      </div>
+      <ul class="py-2 px-4">
+        {#each tocEntries as tocEntry}
+          <li class="toc-entry toc-{tocEntry.tagName.toLowerCase()} py-1">
+            <a class="block text-charcoal text-sm transition hover:text-coral" href="#{tocEntry.id}"
+              >{tocEntry.innerText}</a
+            >
+          </li>
+        {/each}
+      </ul>
+    </aside>
+  {/if}
 
   <article class="article max-w-xl w-full mx-auto px-4">
     <Content />
   </article>
 </section>
+
+<style>
+  .toc-entry.toc-h3,
+  .toc-entry.toc-h4 {
+    @apply border-l border-cool-grey;
+  }
+  .toc-entry.toc-h3 > a {
+    @apply pl-2;
+  }
+  .toc-entry.toc-h4 > a {
+    @apply pl-4;
+  }
+</style>
