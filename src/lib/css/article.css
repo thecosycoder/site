@@ -1,14 +1,3 @@
-@import "@fontsource-variable/karla";
-@import "@fontsource/dm-serif-display";
-@import "@fontsource/courier-prime";
-@import "prism.css";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Blog Styles */
-
 .article p {
   @apply my-6 text-lg;
 }

@@ -1,0 +1,9 @@
+@import "@fontsource-variable/karla";
+@import "@fontsource/dm-serif-display";
+@import "@fontsource/courier-prime";
+@import "prism.css";
+@import "article.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

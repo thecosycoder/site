@@ -47,7 +47,7 @@
                 {(dateFormatted = formatDate(
                   post.meta.date,
                   dateFormatted,
-                  newOptions
+                  newOptions,
                 ))}
               </p>
 

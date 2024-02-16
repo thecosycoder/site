@@ -1,29 +1,43 @@
 <script>
-  import { onMount } from 'svelte';
-  import { formatDate } from '$lib/utils/formatting.js';
+  import { onMount } from "svelte";
+  import { formatDate } from "$lib/utils/formatting.js";
+  import ContentNav from "$components/ContentNav.svelte";
   export let data;
   const { title, date, update, tags, Content } = data;
 
-  let tocEntries = [];
-
-  onMount(async () => {
-    const headings = document.querySelectorAll(
-      '.article h1, .article h2, .article h3, .article h4'
-    );
-
-    tocEntries = headings;
-  });
-
   let dateFormatted;
   let updateFormatted;
-
   dateFormatted = formatDate(date, dateFormatted);
   updateFormatted = formatDate(update, updateFormatted);
+
+  let headings;
+  let allHeadingUrls;
+
+  onMount(async () => {
+    headings = document.querySelectorAll(
+      ".article h1, .article h2, .article h3, .article h4"
+    );
+
+    allHeadingUrls = document.querySelectorAll(
+      ".article h1 a, .article h2 a, .article h3 a, .article h4 a"
+    );
+
+    allHeadingUrls.forEach(function (headingUrl) {
+      headingUrl.addEventListener("click", function (e) {
+        e.preventDefault();
+        let copyUrl = headingUrl.href;
+        console.log(copyUrl);
+        navigator.clipboard.writeText(copyUrl);
+      });
+    });
+  });
 </script>
 
 <header class="bg-brandeis">
   <section class="max-w-6xl w-full mx-auto px-4 py-12 md:py-16">
-    <h1 class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl text-platinum capitalize">
+    <h1
+      class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl text-platinum capitalize"
+    >
       {title}
     </h1>
 
@@ -54,39 +68,9 @@
 </header>
 
 <section class="mt-8 mx-auto xl:container">
-  {#if tocEntries.length}
-    <aside
-      class="max-w-xl w-full mb-8 mx-auto px-4 xl:sticky xl:top-24 xl:mb-0 xl:ml-auto xl:mr-none xl:mr-8 xl:h-0 xl:max-w-xs"
-    >
-      <div class="py-2 px-4 text-platinum bg-gradient-to-r from-cool-grey rounded-t">
-        <h2 class="font-sans font-semibold">Navigation</h2>
-      </div>
-      <ul class="py-2 px-4">
-        {#each tocEntries as tocEntry}
-          <li class="toc-entry toc-{tocEntry.tagName.toLowerCase()} py-1">
-            <a class="block text-charcoal text-sm transition hover:text-coral" href="#{tocEntry.id}"
-              >{tocEntry.innerText}</a
-            >
-          </li>
-        {/each}
-      </ul>
-    </aside>
-  {/if}
+  <ContentNav tocEntries={headings} />
 
   <article class="article max-w-xl w-full mx-auto px-4">
     <Content />
   </article>
 </section>
-
-<style>
-  .toc-entry.toc-h3,
-  .toc-entry.toc-h4 {
-    @apply border-l border-cool-grey;
-  }
-  .toc-entry.toc-h3 > a {
-    @apply pl-2;
-  }
-  .toc-entry.toc-h4 > a {
-    @apply pl-4;
-  }
-</style>

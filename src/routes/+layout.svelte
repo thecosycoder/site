@@ -1,11 +1,11 @@
 <script>
-  import '$src/css/app.css';
+  import "$lib/css/app.css";
 
-  import Header from '$components/Header.svelte';
-  import Footer from '$components/Footer.svelte';
+  import Header from "$components/Header.svelte";
+  import Footer from "$components/Footer.svelte";
 
-  import { fade, fly } from 'svelte/transition';
-  import { quartIn, quadOut } from 'svelte/easing';
+  import { fade, fly } from "svelte/transition";
+  import { quartIn, quadOut } from "svelte/easing";
 
   export let data;
 </script>
@@ -30,7 +30,20 @@
     font-family: theme(fontFamily.sans);
   }
 
-  :global(h1, h2, h3, h4, h5, h6, h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a) {
+  :global(
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      h1 > a,
+      h2 > a,
+      h3 > a,
+      h4 > a,
+      h5 > a,
+      h6 > a
+    ) {
     font-family: theme(fontFamily.serif);
   }
 
