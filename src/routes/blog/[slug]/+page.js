@@ -1,9 +1,9 @@
-import { error } from '@sveltejs/kit';
+import { error } from "@sveltejs/kit";
 
 export const load = async ({ params }) => {
   try {
     const post = await import(`$blog/${params.slug}.md`);
-    const { title, date, update, tags } = post.metadata;
+    const { title, date, update, summary, tags } = post.metadata;
     const Content = post.default;
 
     return {
@@ -11,7 +11,8 @@ export const load = async ({ params }) => {
       date,
       update,
       tags,
-      Content
+      summary,
+      Content,
     };
   } catch (err) {
     error(404, err);

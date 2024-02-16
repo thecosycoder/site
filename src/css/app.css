@@ -1,7 +1,7 @@
-@import '@fontsource-variable/karla';
-@import '@fontsource/dm-serif-display';
-@import '@fontsource/courier-prime';
-@import 'prism.css';
+@import "@fontsource-variable/karla";
+@import "@fontsource/dm-serif-display";
+@import "@fontsource/courier-prime";
+@import "prism.css";
 
 @tailwind base;
 @tailwind components;
@@ -50,8 +50,9 @@
 }
 
 .article h1:first-child,
-.article h2:first-child {
-  @apply mt-6;
+.article h2:first-child,
+.article p:first-child {
+  @apply mt-0;
 }
 
 .article h1,

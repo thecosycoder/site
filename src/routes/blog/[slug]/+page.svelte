@@ -1,26 +1,21 @@
 <script>
+  import { onMount } from "svelte";
+  import { formatDate } from "$lib/utils/formatting.js";
   export let data;
   const { title, date, update, tags, Content } = data;
 
-  const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  };
+  let tocEntries = [];
+
+  onMount(async () => {
+    const headings = document.querySelectorAll(
+      ".article h1, .article h2, .article h3, .article h4"
+    );
+
+    tocEntries = headings;
+  });
 
   let dateFormatted;
   let updateFormatted;
-
-  function formatDate(dateToFormat, formatted) {
-    let validDate = Date.parse(dateToFormat);
-
-    if (!isNaN(validDate)) {
-      formatted = new Date(dateToFormat).toLocaleDateString('en-gb', options);
-    }
-
-    return formatted;
-  }
 
   dateFormatted = formatDate(date, dateFormatted);
   updateFormatted = formatDate(update, updateFormatted);
@@ -28,7 +23,9 @@
 
 <header class="bg-brandeis">
   <section class="max-w-6xl w-full mx-auto px-4 py-12 md:py-16">
-    <h1 class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl text-platinum capitalize">
+    <h1
+      class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl text-platinum capitalize"
+    >
       {title}
     </h1>
 
@@ -58,6 +55,26 @@
   </section>
 </header>
 
-<article class="article max-w-xl w-full mx-auto px-4">
-  <Content />
-</article>
+<section class="container mx-auto">
+  <aside class="sticky top-24 ml-auto mt-8 mr-8 h-0 max-w-xs w-full">
+    <div
+      class="py-2 px-4 text-platinum bg-gradient-to-r from-cool-grey rounded-t"
+    >
+      <h2 class="font-sans font-semibold">Navigation</h2>
+    </div>
+    <ul class="py-2 px-4">
+      {#each tocEntries as tocEntry}
+        <li>
+          <a
+            class="toc-entry toc-{tocEntry.tagName.toLowerCase()} text-charcoal text-sm"
+            href="#{tocEntry.id}">{tocEntry.innerText}</a
+          >
+        </li>
+      {/each}
+    </ul>
+  </aside>
+
+  <article class="article max-w-xl w-full mx-auto px-4">
+    <Content />
+  </article>
+</section>
