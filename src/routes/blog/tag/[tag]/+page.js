@@ -5,10 +5,8 @@ export const load = async ({ fetch, params }) => {
 
   const posts = allPosts.filter((post) => post.meta.tags.includes(tag));
 
-  console.log(params);
-
   return {
     tag,
-    posts
+    posts,
   };
 };

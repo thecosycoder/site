@@ -2,16 +2,19 @@
   import { onMount } from "svelte";
   import { formatDate } from "$lib/utils/formatting.js";
   import ContentNav from "$components/ContentNav.svelte";
+  import { toast } from "$components/Toast.svelte";
   export let data;
   const { title, date, update, tags, Content } = data;
 
   let dateFormatted;
   let updateFormatted;
-  dateFormatted = formatDate(date, dateFormatted);
-  updateFormatted = formatDate(update, updateFormatted);
-
   let headings;
   let allHeadingUrls;
+
+  toast.pop();
+
+  dateFormatted = formatDate(date, dateFormatted);
+  updateFormatted = formatDate(update, updateFormatted);
 
   onMount(async () => {
     headings = document.querySelectorAll(
@@ -26,7 +29,6 @@
       headingUrl.addEventListener("click", function (e) {
         e.preventDefault();
         let copyUrl = headingUrl.href;
-        console.log(copyUrl);
         navigator.clipboard.writeText(copyUrl);
       });
     });
@@ -73,4 +75,6 @@
   <article class="article max-w-xl w-full mx-auto px-4">
     <Content />
   </article>
+
+  <!-- <button on:click{toast.pop}>hello</button> -->
 </section>

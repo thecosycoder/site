@@ -4,7 +4,7 @@
 
 {#if tocEntries.length}
   <aside
-    class="max-w-xl w-full mb-8 mx-auto px-4 xl:sticky xl:top-24 xl:mb-0 xl:ml-auto xl:mr-none xl:mr-8 xl:h-0 xl:max-w-xs"
+    class="max-w-xl w-full mb-8 mx-auto px-4 xl:sticky xl:top-20 xl:mb-0 xl:ml-auto xl:mr-none xl:mr-8 xl:h-0 xl:max-w-xs"
   >
     <div
       class="py-2 px-4 text-platinum bg-gradient-to-r from-cool-grey rounded-t"
