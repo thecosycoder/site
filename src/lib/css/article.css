@@ -95,3 +95,11 @@
 .article ul ul li::marker {
   @apply text-coral;
 }
+
+.article blockquote {
+  @apply p-4 bg-brandeis text-platinum;
+}
+
+.article blockquote p:last-child {
+  @apply mb-0;
+}
