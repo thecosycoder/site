@@ -8,7 +8,7 @@
 .article h4,
 .article h5,
 .article h6 {
-  @apply relative mt-10 mb-6 px-2;
+  @apply relative mt-10 mb-6 mr-4 px-2;
 }
 
 .article h1::before,

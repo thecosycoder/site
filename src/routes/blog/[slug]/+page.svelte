@@ -2,16 +2,13 @@
   import { onMount } from "svelte";
   import { formatDate } from "$lib/utils/formatting.js";
   import ContentNav from "$components/ContentNav.svelte";
-  import { toast } from "$components/Toast.svelte";
+  import Toast from "$components/Toast.svelte";
   export let data;
   const { title, date, update, tags, Content } = data;
 
   let dateFormatted;
   let updateFormatted;
   let headings;
-  let allHeadingUrls;
-
-  toast.pop();
 
   dateFormatted = formatDate(date, dateFormatted);
   updateFormatted = formatDate(update, updateFormatted);
@@ -21,15 +18,12 @@
       ".article h1, .article h2, .article h3, .article h4"
     );
 
-    allHeadingUrls = document.querySelectorAll(
-      ".article h1 a, .article h2 a, .article h3 a, .article h4 a"
-    );
-
-    allHeadingUrls.forEach(function (headingUrl) {
-      headingUrl.addEventListener("click", function (e) {
+    headings.forEach(function (heading) {
+      heading.addEventListener("click", function (e) {
+        let headingUrl = heading.children[0].href;
         e.preventDefault();
-        let copyUrl = headingUrl.href;
-        navigator.clipboard.writeText(copyUrl);
+
+        navigator.clipboard.writeText(headingUrl);
       });
     });
   });
@@ -75,6 +69,5 @@
   <article class="article max-w-xl w-full mx-auto px-4">
     <Content />
   </article>
-
-  <!-- <button on:click{toast.pop}>hello</button> -->
 </section>
+<Toast toastMessage="Link Copied!" />
