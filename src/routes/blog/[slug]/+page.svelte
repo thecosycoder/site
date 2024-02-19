@@ -1,8 +1,8 @@
 <script>
-  import { onMount } from 'svelte';
-  import { formatDate } from '$lib/utils/formatting.js';
-  import ContentNav from '$components/ContentNav.svelte';
-  import Toast from '$components/Toast.svelte';
+  import { onMount } from "svelte";
+  import { formatDate } from "$lib/utils/formatting.js";
+  import ContentNav from "$components/ContentNav.svelte";
+  import Toast from "$components/Toast.svelte";
   export let data;
   const { title, date, update, tags, Content } = data;
 
@@ -15,10 +15,12 @@
   updateFormatted = formatDate(update, updateFormatted);
 
   onMount(async () => {
-    headings = document.querySelectorAll('.article h1, .article h2, .article h3, .article h4');
+    headings = document.querySelectorAll(
+      ".article h1, .article h2, .article h3, .article h4"
+    );
 
     headings.forEach(function (heading) {
-      heading.addEventListener('click', function (e) {
+      heading.addEventListener("click", function (e) {
         let headingUrl = heading.children[0].href;
         e.preventDefault();
 
