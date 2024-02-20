@@ -1,10 +1,10 @@
 ---
 title: Testing Markdown
-date: '2023-02-01'
+date: "2023-02-01"
 tags:
-  - 'front-end'
-  - 'developement'
-  - 'tag'
+  - "front-end"
+  - "developement"
+  - "tag"
 ---
 
 # This is a blog
@@ -23,8 +23,12 @@ This is some **_bold italic text_**
 
 Porta nibh venenatis cras sed felis eget velit aliquet. Augue lacus viverra vitae congue eu consequat ac. Adipiscing at in tellus integer feugiat scelerisque varius morbi enim. Maecenas volutpat blandit aliquam etiam. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Curabitur vitae nunc sed velit dignissim sodales. Dui vivamus arcu felis bibendum ut tristique et egestas quis. Eget magna fermentum iaculis eu non diam phasellus. Mattis aliquam faucibus purus in massa tempor nec feugiat. Laoreet sit amet cursus sit amet dictum sit amet justo.
 
-Aliquam sem et tortor consequat id. Velit egestas dui id ornare arcu odio ut. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Praesent tristique magna sit amet purus gravida quis blandit.
+```js
+console.log("hello");
+```
+
+Aliquam sem et tortor consequat id. Velit egestas dui id ornare arcu odio ut. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Lorem ipsum dolor sit amet `let num = 4 + 3;` consectetur adipiscing elit pellentesque. Praesent tristique magna sit amet purus `console.log("hello");` gravida quis blandit.
 
 > Interdum velit euismod in pellentesque massa placerat duis. Ac turpis egestas maecenas pharetra convallis posuere morbi leo urna. Arcu dui vivamus arcu felis bibendum. Ut sem nulla pharetra diam sit amet nisl. Iaculis eu non diam phasellus vestibulum lorem.
-
+>
 > Sodales ut etiam sit amet. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Mattis aliquam faucibus purus in massa tempor nec feugiat.

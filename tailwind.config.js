@@ -5,6 +5,7 @@ export default {
     fontFamily: {
       sans: ["Karla Variable", "ui-sans-serif", "system-ui"],
       serif: ["DM Serif Display", "ui-serif", "Georgia"],
+      italic: [],
       mono: ["Courier Prime", "ui-monospace", "SFMono-Regular"],
     },
     extend: {

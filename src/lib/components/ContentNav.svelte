@@ -1,9 +1,5 @@
 <script>
   export let tocEntries = [];
-
-  function gotoHeading(headingId) {
-    headingId.scrollIntoView({ behavior: "smooth" });
-  }
 </script>
 
 {#if tocEntries.length}
@@ -20,9 +16,7 @@
         <li class="toc-entry toc-{tocEntry.tagName.toLowerCase()} py-1">
           <a
             class="block text-charcoal text-sm transition hover:text-coral"
-            href="#{tocEntry.id}"
-            on:click|preventDefault={gotoHeading(tocEntry)}
-            >{tocEntry.innerText}</a
+            href="#{tocEntry.id}">{tocEntry.innerText}</a
           >
         </li>
       {/each}
