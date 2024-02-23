@@ -7,7 +7,7 @@
 
   const newOptions = {
     year: "numeric",
-    month: "numeric",
+    month: "short",
     day: "numeric",
   };
 
@@ -47,7 +47,7 @@
                 {(dateFormatted = formatDate(
                   post.meta.date,
                   dateFormatted,
-                  newOptions,
+                  newOptions
                 ))}
               </p>
 
