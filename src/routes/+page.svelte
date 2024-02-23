@@ -1,11 +1,73 @@
-<section class="container mx-auto px-4">
-	<h1 class="text-3xl">
-		Hello world!
-	</h1>
-	<p>Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Tortor dignissim convallis aenean et tortor. Ac felis donec et odio pellentesque diam volutpat commodo sed. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Augue lacus viverra vitae congue eu. Justo laoreet sit amet cursus. Etiam erat velit scelerisque in dictum non consectetur. Nisi quis eleifend quam adipiscing vitae proin sagittis. Elit sed vulputate mi sit. Nibh mauris cursus mattis molestie a iaculis at.</p>
-	<p>Etiam sit amet nisl purus in mollis nunc sed id. Neque egestas congue quisque egestas diam in arcu cursus euismod. Urna nunc id cursus metus aliquam eleifend mi in. Neque egestas congue quisque egestas diam in arcu. In iaculis nunc sed augue. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Sed arcu non odio euismod lacinia at. Tristique senectus et netus et malesuada fames. Pharetra pharetra massa massa ultricies mi quis. Lacus sed viverra tellus in hac habitasse. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus.</p>
-	<p>Ante in nibh mauris cursus mattis molestie a. Senectus et netus et malesuada fames ac turpis. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Nisl rhoncus mattis rhoncus urna neque. Diam quis enim lobortis scelerisque fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames. Id cursus metus aliquam eleifend mi in nulla posuere. Ut porttitor leo a diam sollicitudin. Elementum curabitur vitae nunc sed. Leo a diam sollicitudin tempor id. In nibh mauris cursus mattis molestie. Convallis posuere morbi leo urna molestie at elementum eu facilisis. Mattis pellentesque id nibh tortor id aliquet.</p>
-	<p>Lobortis scelerisque fermentum dui faucibus. Donec enim diam vulputate ut. Arcu non odio euismod lacinia at quis risus sed. Semper viverra nam libero justo laoreet sit amet. Amet consectetur adipiscing elit ut aliquam purus sit amet luctus. Quis blandit turpis cursus in hac habitasse platea. Turpis in eu mi bibendum neque egestas congue quisque egestas. Nulla facilisi cras fermentum odio eu. Nisl nunc mi ipsum faucibus vitae aliquet. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl.</p>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac tortor vitae purus faucibus ornare. Viverra ipsum nunc aliquet bibendum enim facilisis. Magna ac placerat vestibulum lectus mauris ultrices eros in. Convallis convallis tellus id interdum velit. Vitae purus faucibus ornare suspendisse sed nisi lacus. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Imperdiet nulla malesuada pellentesque elit eget. Sed arcu non odio euismod lacinia at quis risus sed. Sit amet nisl suscipit adipiscing bibendum est.</p>
-	<code>hello</code>
+<script>
+  import { onMount } from 'svelte';
+  import { formatDate } from '$lib/utils/formatting.js';
+
+  let posts = [];
+  let dateFormatted;
+
+  const newOptions = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric'
+  };
+
+  onMount(async () => {
+    const res = await fetch(`/api/posts`);
+    posts = await res.json();
+  });
+</script>
+
+<section class="container mx-auto py-8 px-4 border border-b-cool-grey">
+  <strong class="mb-8">Welcome!</strong>
+  <h1
+    class="relative my-8 mr-4 px-2 scroll-mt-16 text-4xl sm:text-6xl md:text-8xl before:content-[''] before:block before:absolute before:bottom-0 before:left-0 before:-z-10 before:w-1/2 before:max-h-10 before:h-1/2 before:bg-gradient-to-r before:from-coral"
+  >
+    I'm The Cosy Coder
+  </h1>
+  <p class="mt-9 text-lg font-bold">
+    I make content about web developement and tech in general. Enjoy!
+  </p>
+</section>
+
+<section class="container mx-auto py-8 px-4">
+  <h2
+    class="relative mb-8 mr-4 px-2 scroll-mt-16 text-2xl sm:text-4xl md:text-6xl before:content-[''] before:block before:absolute before:bottom-0 before:left-0 before:-z-10 before:w-1/2 before:max-h-6 before:h-1/2 before:bg-gradient-to-r before:from-brandeis"
+  >
+    Recent Posts:
+  </h2>
+
+  <ul class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    {#each posts as post}
+      <li class="w-full p-6 border border-cool-grey">
+        <div class="flex flex-col h-full">
+          <a class="group block mb-6" href={post.path}>
+            <h2
+              class="relative text-3xl mb-6 before:content-[''] before:block before:absolute before:bottom-1 before:left-0 before:w-1/2 before:h-7 before:bg-gradient-to-r before:from-brandeis before:transition before:duration-200 before:ease-in-out before:scale-x-0 before:origin-left group-hover:before:scale-x-100 group-hover:before:origin-left before:-z-10"
+            >
+              {post.meta.title}
+            </h2>
+            {#if post.meta.summary}
+              <p>{post.meta.summary}</p>
+            {/if}
+          </a>
+          <div class="mt-auto flex gap-4 justify-between">
+            <p>
+              {(dateFormatted = formatDate(post.meta.date, dateFormatted, newOptions))}
+            </p>
+
+            <div class="flex gap-4">
+              {#each post.meta.tags as tag}
+                <a
+                  class="relative text-brandeis before:content-[''] before:block before:absolute before:bottom-1 before:left-0 before:w-1/2 before:h-4 before:bg-gradient-to-r before:from-brandeis before:opacity-60 before:transition before:duration-200 before:ease-in-out before:scale-x-0 before:origin-left hover:before:scale-x-100 hover:before:origin-left before:-z-10"
+                  href="/blog/tag/{tag}"
+                >
+                  #{tag}
+                </a>
+              {/each}
+            </div>
+          </div>
+        </div>
+      </li>
+    {/each}
+  </ul>
 </section>
