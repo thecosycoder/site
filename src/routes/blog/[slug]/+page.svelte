@@ -1,8 +1,8 @@
 <script>
-  import { onMount } from "svelte";
-  import { formatDate } from "$lib/utils/formatting.js";
-  import ContentNav from "$components/ContentNav.svelte";
-  import Toast from "$components/Toast.svelte";
+  import { onMount } from 'svelte';
+  import { formatDate } from '$lib/utils/formatting.js';
+  import ContentNav from '$components/ContentNav.svelte';
+  import Toast from '$components/Toast.svelte';
   export let data;
   const { title, date, update, tags, Content } = data;
 
@@ -15,12 +15,10 @@
   updateFormatted = formatDate(update, updateFormatted);
 
   onMount(async () => {
-    headings = document.querySelectorAll(
-      ".article h1, .article h2, .article h3, .article h4"
-    );
+    headings = document.querySelectorAll('.article h1, .article h2, .article h3, .article h4');
 
     headings.forEach(function (heading) {
-      heading.addEventListener("click", function (e) {
+      heading.addEventListener('click', function (e) {
         let headingUrl = heading.children[0].href;
         e.preventDefault();
 
@@ -37,8 +35,8 @@
       {title}
     </h1>
 
-    <div class="flex gap-4 flex-col md:flex-row justify-between">
-      <div class="tags flex flex-wrap gap-x-4">
+    <div class="flex gap-8 md:gap-4 flex-col md:flex-row justify-between">
+      <div class="flex flex-wrap gap-x-4 gap-y-2">
         {#if dateFormatted != null}
           <p>Published: {dateFormatted}</p>
         {/if}
@@ -47,7 +45,7 @@
           <p>Updated: {updateFormatted}</p>
         {/if}
       </div>
-      <div class="tags flex gap-x-4">
+      <div class="flex flex-wrap gap-x-4 gap-y-2">
         {#if tags.length}
           {#each tags as tag}
             <a
