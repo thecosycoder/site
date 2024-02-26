@@ -28,6 +28,11 @@
   });
 </script>
 
+<svelte:head>
+  <title>The Cosy Coder</title>
+  <meta property="og:title" content="The Cosy Coder" />
+</svelte:head>
+
 <section class="container max-w-6xl mx-auto pt-8 px-4">
   <strong class="mb-8">Welcome!</strong>
   <h1
@@ -35,7 +40,7 @@
   >
     I'm The Cosy Coder
   </h1>
-  <p class="mt-8 pb-8 text-lg font-bold border border-b-cool-grey">
+  <p class="mt-8 pb-8 text-lg font-bold border-b border-b-cool-gray">
     I make content about web developement and tech in general. Enjoy!
   </p>
 </section>
@@ -50,7 +55,7 @@
   <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
     {#each posts as post, i}
       {#if i < recentPostNum}
-        <li class="w-full p-4 md:p-6 border border-cool-grey">
+        <li class="w-full p-4 md:p-6 border border-cool-gray">
           <div class="flex flex-col h-full">
             <a class="group block mb-6" href={post.path}>
               <h2

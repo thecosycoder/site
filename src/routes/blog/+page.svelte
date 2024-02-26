@@ -28,7 +28,7 @@
   <section class="px-4">
     <ul>
       {#each posts as post}
-        <li class="max-w-3xl w-full mx-auto py-8 border-b border-cool-grey">
+        <li class="max-w-3xl w-full mx-auto py-8 border-b border-cool-gray">
           <div>
             <a class="group block mb-6" href={post.path}>
               <h2
@@ -56,6 +56,7 @@
                 {/each}
               </div>
             </div>
+            <p class="mt-2 text-cool-gray">{post.meta.readingTime.text}</p>
           </div>
         </li>
       {/each}

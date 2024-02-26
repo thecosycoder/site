@@ -4,7 +4,7 @@
   import ContentNav from '$components/ContentNav.svelte';
   import Toast from '$components/Toast.svelte';
   export let data;
-  const { title, date, update, tags, Content } = data;
+  const { title, date, update, tags, readingTime, Content } = data;
 
   let dateFormatted;
   let updateFormatted;
@@ -29,6 +29,11 @@
   });
 </script>
 
+<svelte:head>
+  <title>The Cosy Coder - {title}</title>
+  <meta property="og:title" content={title} />
+</svelte:head>
+
 <header class="bg-brandeis">
   <section class="max-w-6xl w-full mx-auto px-4 py-12 md:py-16 text-platinum">
     <h1 class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl capitalize">
@@ -44,6 +49,8 @@
           <p class="hidden sm:inline">-</p>
           <p>Updated: {updateFormatted}</p>
         {/if}
+        <p class="hidden sm:inline">-</p>
+        <p>{readingTime.text}</p>
       </div>
       <div class="flex flex-wrap gap-x-4 gap-y-2">
         {#if tags.length}

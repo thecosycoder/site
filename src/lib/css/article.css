@@ -97,7 +97,7 @@
 }
 
 .article blockquote {
-  @apply relative p-4 pt-12 my-6 border-2 border-brandeis bg-gradient-to-br from-brandeis to-brandeis/40 text-platinum italic;
+  @apply relative p-4 pt-12 my-6 bg-brandeis text-platinum italic;
 }
 
 .article blockquote::before {
@@ -106,4 +106,8 @@
 
 .article blockquote p:last-child {
   @apply mb-0;
+}
+
+.article img {
+  @apply my-6 w-full;
 }

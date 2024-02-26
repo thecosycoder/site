@@ -1,14 +1,16 @@
 ---
 title: A Blog Post About Coding with an extra long title
-date: "2023-01-30"
-update: "2024-10-10"
-summary: "Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Augue neque gravida in fermentum et sollicitudin ac orci."
+date: '2023-01-30'
+update: '2024-10-10'
+summary: 'Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Augue neque gravida in fermentum et sollicitudin ac orci.'
 tags:
-  - "front-end"
-  - "svelte"
+  - 'front-end'
+  - 'svelte'
 ---
 
 Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Augue neque gravida in fermentum et sollicitudin ac orci. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Vivamus arcu felis bibendum ut. Urna porttitor rhoncus dolor purus non. Dictum sit amet justo donec enim diam vulputate. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. In egestas erat imperdiet sed.
+
+![alt text](/images/image-3.jpg)
 
 Ac placerat vestibulum lectus mauris ultrices eros in cursus. Venenatis urna cursus eget nunc scelerisque viverra. Potenti nullam ac tortor vitae purus. Ut ornare lectus sit amet. Faucibus scelerisque eleifend donec pretium vulputate. Lobortis mattis aliquam faucibus purus in massa tempor. Nec tincidunt praesent semper feugiat nibh sed pulvinar. Tellus cras adipiscing enim eu turpis egestas pretium aenean. Pharetra et ultrices neque ornare aenean euismod elementum. Euismod in pellentesque massa placerat duis ultricies lacus sed turpis. Proin libero nunc consequat interdum varius sit amet mattis. A diam sollicitudin tempor id eu nisl nunc.
 
@@ -67,6 +69,8 @@ else:
 Sit amet tellus cras adipiscing enim. Lacus viverra vitae congue eu consequat ac felis. Tortor id aliquet lectus proin nibh nisl. Vulputate dignissim suspendisse in est ante in nibh. Mi quis hendrerit dolor magna eget est. Augue mauris augue neque gravida in fermentum et. Arcu bibendum at varius vel pharetra vel turpis nunc. Habitasse platea dictumst vestibulum rhoncus est pellentesque.
 
 ### Another h3 in this section
+
+![alt text](/images/image-2.jpg)
 
 Ac placerat vestibulum lectus mauris ultrices eros in cursus. Venenatis urna cursus eget nunc scelerisque viverra. Potenti nullam ac tortor vitae purus. Ut ornare lectus sit amet. Faucibus scelerisque eleifend donec pretium vulputate. Lobortis mattis aliquam faucibus purus in massa tempor. Nec tincidunt praesent semper feugiat nibh sed pulvinar. Tellus cras adipiscing enim eu turpis egestas pretium aenean. Pharetra et ultrices neque ornare aenean euismod elementum. Euismod in pellentesque massa placerat duis ultricies lacus sed turpis. Proin libero nunc consequat interdum varius sit amet mattis. A diam sollicitudin tempor id eu nisl nunc.
 
