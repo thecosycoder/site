@@ -1,6 +1,6 @@
 <script>
-  import { onMount } from 'svelte';
-  import DarkSwitch from './DarkSwitch.svelte';
+  import { onMount } from "svelte";
+  import DarkSwitch from "./DarkSwitch.svelte";
 
   let routes = [];
 
@@ -18,13 +18,13 @@
     >
     <ul class="flex gap-4">
       <li
-        class="capitalize relative z-10 before:content-[''] before:block before:absolute before:bottom-1 before:left-0 before:w-1/2 before:h-4 before:bg-gradient-to-r before:from-brandeis before:opacity-60 before:transition before:duration-200 before:ease-in-out before:scale-x-0 before:origin-left hover:before:scale-x-100 hover:before:origin-left before:-z-10"
+        class="capitalize relative z-10 before:content-[''] before:block before:absolute before:bottom-1 before:left-0 before:w-1/2 before:h-4 before:bg-gradient-to-r before:from-cool-gray before:opacity-60 before:transition before:duration-200 before:ease-in-out before:scale-x-0 before:origin-left hover:before:scale-x-100 hover:before:origin-left before:-z-10"
       >
         <a href="/">Home</a>
       </li>
       {#each routes as route}
         <li
-          class="capitalize relative z-10 before:content-[''] before:block before:absolute before:bottom-1 before:left-0 before:w-1/2 before:h-4 before:bg-gradient-to-r before:from-brandeis before:opacity-60 before:transition before:duration-200 before:ease-in-out before:scale-x-0 before:origin-left hover:before:scale-x-100 hover:before:origin-left before:-z-10"
+          class="capitalize relative z-10 before:content-[''] before:block before:absolute before:bottom-1 before:left-0 before:w-1/2 before:h-4 before:bg-gradient-to-r before:from-cool-gray before:opacity-60 before:transition before:duration-200 before:ease-in-out before:scale-x-0 before:origin-left hover:before:scale-x-100 hover:before:origin-left before:-z-10"
         >
           <a href="/{route.path}">{route.path}</a>
         </li>
