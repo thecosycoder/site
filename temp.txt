@@ -1,0 +1,12 @@
+        transparent: "transparent",
+        current: "currentColor",
+        platinum: "#E6E8E6",
+        smoke: "#100B00",
+        charcoal: "#353A47",
+        "cool-gray": "#848FA5",
+        "cool-grey": "#848FA5",
+        coral: "#EF8354",
+        brandeis: "#256EFF",
+
+https://coolors.co/223843-3993dd-eff1f3-f4e87c-0f4c5c
+new colors

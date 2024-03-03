@@ -17,7 +17,7 @@
 {#if active}
   <div
     transition:fly={{ duration: 250, y: 20 }}
-    class="fixed right-0 bottom-0 mr-8 mb-8 p-2 bg-smoke text-platinum rounded shadow-md"
+    class="fixed right-0 bottom-0 mr-8 mb-8 p-2 bg-gunmetal text-platinum rounded shadow-md"
   >
     {toastMessage}
   </div>

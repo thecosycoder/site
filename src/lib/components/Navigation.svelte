@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import DarkSwitch from "./DarkSwitch.svelte";
 
   let routes = [];
 
@@ -11,9 +12,14 @@
 
 <nav>
   <ul class="container mx-auto px-4 flex gap-4 justify-center">
-    <li class="capitalize"><a href="/">Home</a></li>
+    <li class="capitalize">
+      <a href="/">Home</a>
+    </li>
     {#each routes as route}
-      <li class="capitalize"><a href="/{route.path}">{route.path}</a></li>
+      <li class="capitalize">
+        <a href="/{route.path}">{route.path}</a>
+      </li>
     {/each}
+    <DarkSwitch />
   </ul>
 </nav>
