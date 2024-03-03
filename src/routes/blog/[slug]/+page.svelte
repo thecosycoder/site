@@ -1,8 +1,8 @@
 <script>
-  import { onMount } from "svelte";
-  import { formatDate } from "$lib/utils/formatting.js";
-  import ContentNav from "$components/ContentNav.svelte";
-  import Toast from "$components/Toast.svelte";
+  import { onMount } from 'svelte';
+  import { formatDate } from '$lib/utils/formatting.js';
+  import ContentNav from '$components/ContentNav.svelte';
+  import Toast from '$components/Toast.svelte';
   export let data;
   const { title, date, update, tags, readingTime, Content } = data;
 
@@ -15,12 +15,10 @@
   updateFormatted = formatDate(update, updateFormatted);
 
   onMount(async () => {
-    headings = document.querySelectorAll(
-      ".article h1, .article h2, .article h3, .article h4"
-    );
+    headings = document.querySelectorAll('.article h1, .article h2, .article h3, .article h4');
 
     headings.forEach(function (heading) {
-      heading.addEventListener("click", function (e) {
+      heading.addEventListener('click', function (e) {
         let headingUrl = heading.children[0].href;
         e.preventDefault();
 
@@ -37,9 +35,7 @@
 </svelte:head>
 
 <header class="bg-brandeis">
-  <section
-    class="max-w-6xl w-full mx-auto px-4 py-12 md:py-16 text-platinum"
-  >
+  <section class="max-w-6xl w-full mx-auto px-4 py-12 md:py-16 text-platinum">
     <h1 class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl capitalize">
       {title}
     </h1>
