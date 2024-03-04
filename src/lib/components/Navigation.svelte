@@ -1,13 +1,20 @@
 <script>
-  import { onMount } from 'svelte';
-  import DarkSwitch from './DarkSwitch.svelte';
+  import DarkSwitch from "./DarkSwitch.svelte";
 
-  let routes = [];
-
-  onMount(async () => {
-    const res = await fetch(`/api/routes`);
-    routes = await res.json();
-  });
+  let navItems = [
+    {
+      path: "/",
+      pathName: "home",
+    },
+    {
+      path: "/about",
+      pathName: "about",
+    },
+    {
+      path: "/blog",
+      pathName: "blog",
+    },
+  ];
 </script>
 
 <nav>
@@ -17,18 +24,14 @@
       href="/">.CC</a
     >
     <ul class="flex gap-4">
-      <li
-        class="capitalize relative z-10 before:content-[''] before:block before:absolute before:bottom-1 before:left-0 before:w-1/2 before:h-4 before:bg-gradient-to-r before:from-cool-gray before:opacity-60 before:transition before:duration-200 before:ease-in-out before:scale-x-0 before:origin-left hover:before:scale-x-100 hover:before:origin-left before:-z-10"
-      >
-        <a href="/">Home</a>
-      </li>
-      {#each routes as route}
+      {#each navItems as navItem}
         <li
           class="capitalize relative z-10 before:content-[''] before:block before:absolute before:bottom-1 before:left-0 before:w-1/2 before:h-4 before:bg-gradient-to-r before:from-cool-gray before:opacity-60 before:transition before:duration-200 before:ease-in-out before:scale-x-0 before:origin-left hover:before:scale-x-100 hover:before:origin-left before:-z-10"
         >
-          <a href="/{route.path}">{route.path}</a>
+          <a href={navItem.path}>{navItem.pathName}</a>
         </li>
       {/each}
+
       <DarkSwitch />
     </ul>
   </div>
