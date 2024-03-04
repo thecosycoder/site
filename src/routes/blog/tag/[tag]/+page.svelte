@@ -1,5 +1,4 @@
 <script>
-  import { error } from '@sveltejs/kit';
   import { formatDate } from '$lib/utils/formatting.js';
 
   let dateFormatted;
@@ -14,8 +13,8 @@
   const { tag, posts } = data;
 </script>
 
-{#if posts.length}
-  <section>
+<section>
+  {#if posts.length}
     <header class="bg-brandeis">
       <section class="max-w-6xl w-full mx-auto px-4 py-12 md:py-16">
         <h1 class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl text-platinum capitalize">
@@ -60,7 +59,20 @@
         {/each}
       </ul>
     </section>
-  </section>
-{:else}
-  {error(500, `No posts tagged "${tag}"`)}
-{/if}
+  {:else}
+    <header class="bg-brandeis">
+      <section class="max-w-6xl w-full mx-auto px-4 py-12 md:py-16">
+        <h1 class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl text-platinum capitalize">
+          Sorry, no posts tagged {tag}
+        </h1>
+      </section>
+    </header>
+    <section class=" max-w-3xl w-full mx-auto py-8 px-4">
+      <a
+        href="/"
+        class="inline-block capitalize relative z-10 text-lg text-brandeis before:content-[''] before:block before:absolute before:bottom-1 before:left-0 before:w-1/2 before:h-full before:bg-gradient-to-r before:from-brandeis before:opacity-60 before:transition before:duration-200 before:ease-in-out before:scale-x-0 before:origin-left hover:before:scale-x-100 hover:before:origin-left before:-z-10"
+        >Home</a
+      >
+    </section>
+  {/if}
+</section>
