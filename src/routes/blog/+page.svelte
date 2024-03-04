@@ -1,14 +1,14 @@
 <script>
-  import { onMount } from "svelte";
-  import { formatDate } from "$lib/utils/formatting.js";
+  import { onMount } from 'svelte';
+  import { formatDate } from '$lib/utils/formatting.js';
 
   let posts = [];
   let dateFormatted;
 
   const newOptions = {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
   };
 
   onMount(async () => {
@@ -20,9 +20,7 @@
 <section>
   <header class="bg-brandeis">
     <section class="max-w-6xl w-full mx-auto px-4 py-12 md:py-16">
-      <h1
-        class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl text-platinum capitalize"
-      >
+      <h1 class="mb-6 md:mb-12 text-4xl sm:text-6xl md:text-8xl text-platinum capitalize">
         Blog Home
       </h1>
     </section>
@@ -44,11 +42,7 @@
             </a>
             <div class="flex flex-col md:flex-row gap-4 justify-between">
               <p>
-                {(dateFormatted = formatDate(
-                  post.meta.date,
-                  dateFormatted,
-                  newOptions
-                ))}
+                {(dateFormatted = formatDate(post.meta.date, dateFormatted, newOptions))}
               </p>
 
               <div class="flex flex-wrap gap-x-4 gap-y-2">

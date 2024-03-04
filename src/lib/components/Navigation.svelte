@@ -1,6 +1,6 @@
 <script>
-  import { onMount } from "svelte";
-  import DarkSwitch from "./DarkSwitch.svelte";
+  import { onMount } from 'svelte';
+  import DarkSwitch from './DarkSwitch.svelte';
 
   let routes = [];
 

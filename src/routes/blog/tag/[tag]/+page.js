@@ -7,6 +7,6 @@ export const load = async ({ fetch, params }) => {
 
   return {
     tag,
-    posts,
+    posts
   };
 };

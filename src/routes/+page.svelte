@@ -92,7 +92,7 @@
 
 <div class="bg-brandeis">
   <section class="max-w-6xl w-full mx-auto px-4 py-8 text-platinum">
-    <h3 class="mb-8 text-2xl sm:text-3xl">Post Categories:</h3>
+    <h3 class="mb-8 text-2xl sm:text-3xl">All Post Tags:</h3>
     <div class="max-w-3xl w-full flex flex-wrap gap-x-4 gap-y-2">
       {#each uniqueTags as tag}
         <a
