@@ -1,31 +1,16 @@
 <script>
-  import { onMount } from 'svelte';
   import { formatDate } from '$lib/utils/formatting.js';
 
-  let posts = [];
-  let tags = [];
-  let uniqueTags = [];
   let recentPostNum = 6;
   let dateFormatted;
+
+  export let data;
 
   const newOptions = {
     year: 'numeric',
     month: 'short',
     day: 'numeric'
   };
-
-  onMount(async () => {
-    const res = await fetch(`/api/posts`);
-    posts = await res.json();
-
-    posts.forEach((post) => {
-      post.meta.tags.forEach((tag) => {
-        tags.push(tag);
-      });
-    });
-
-    uniqueTags = [...new Set(tags)].sort();
-  });
 </script>
 
 <svelte:head>
@@ -53,7 +38,7 @@
   </h2>
 
   <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
-    {#each posts as post, i}
+    {#each data.posts as post, i}
       {#if i < recentPostNum}
         <li class="w-full p-4 md:p-6 border border-cool-gray">
           <div class="flex flex-col h-full">
@@ -94,7 +79,7 @@
   <section class="max-w-6xl w-full mx-auto px-4 py-8 text-platinum">
     <h3 class="mb-8 text-2xl sm:text-3xl">All Post Tags:</h3>
     <div class="max-w-3xl w-full flex flex-wrap gap-x-4 gap-y-2">
-      {#each uniqueTags as tag}
+      {#each data.uniqueTags as tag}
         <a
           class="relative z-10 text-xl before:content-[''] before:block before:absolute before:bottom-1 before:left-0 before:w-1/2 before:h-4 before:bg-gradient-to-r before:from-platinum before:opacity-60 before:transition before:duration-200 before:ease-in-out before:scale-x-0 before:origin-left hover:before:scale-x-100 hover:before:origin-left before:-z-10"
           href="/blog/tag/{tag}"

@@ -9,7 +9,7 @@
     Error
   </h1>
   <p class="mt-8 pb-8 text-xl font-bold">
-    {$page.status}: {$page.error.message}
+    {$page.status}: Something went wrong!
   </p>
 
   <a

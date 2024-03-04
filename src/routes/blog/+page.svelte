@@ -1,8 +1,7 @@
 <script>
-  import { onMount } from 'svelte';
   import { formatDate } from '$lib/utils/formatting.js';
 
-  let posts = [];
+  export let data;
   let dateFormatted;
 
   const newOptions = {
@@ -10,11 +9,6 @@
     month: 'short',
     day: 'numeric'
   };
-
-  onMount(async () => {
-    const res = await fetch(`/api/posts`);
-    posts = await res.json();
-  });
 </script>
 
 <section>
@@ -27,7 +21,7 @@
   </header>
   <section class="px-4">
     <ul>
-      {#each posts as post}
+      {#each data.posts as post}
         <li class="max-w-3xl w-full mx-auto py-8 border-b border-cool-gray">
           <div>
             <a class="group block mb-6" href={post.path}>

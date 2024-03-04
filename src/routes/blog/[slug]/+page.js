@@ -1,21 +1,24 @@
-import { error } from "@sveltejs/kit";
+import { error } from '@sveltejs/kit';
 
 export const load = async ({ params }) => {
-  try {
-    const post = await import(`../../../lib/posts/${params.slug}.md`);
-    const { title, date, update, summary, tags, readingTime } = post.metadata;
-    const Content = post.default;
+  const post = await import(`../../../lib/posts/${params.slug}.md`);
+  const { title, date, update, summary, tags, readingTime } = post.metadata;
+  const Content = post.default;
 
-    return {
-      title,
-      date,
-      update,
-      summary,
-      tags,
-      readingTime,
-      Content,
-    };
-  } catch (err) {
-    error(404, err);
+  // Fix this
+  if (!post) {
+    error(404, {
+      message: 'Not found'
+    });
   }
+
+  return {
+    title,
+    date,
+    update,
+    summary,
+    tags,
+    readingTime,
+    Content
+  };
 };
