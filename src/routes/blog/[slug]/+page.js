@@ -1,4 +1,4 @@
-import { error } from '@sveltejs/kit';
+import { error } from "@sveltejs/kit";
 
 export const load = async ({ params }) => {
   try {
@@ -13,7 +13,7 @@ export const load = async ({ params }) => {
       summary,
       tags,
       readingTime,
-      Content
+      Content,
     };
   } catch (err) {
     error(404, err);
