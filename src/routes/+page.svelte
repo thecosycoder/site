@@ -1,5 +1,5 @@
 <script>
-  import { formatDate } from '$lib/utils/formatting.js';
+  import { formatDate } from "$lib/utils/formatting.js";
 
   let recentPostNum = 6;
   let dateFormatted;
@@ -7,9 +7,9 @@
   export let data;
 
   const newOptions = {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
+    year: "numeric",
+    month: "short",
+    day: "numeric",
   };
 </script>
 
@@ -52,9 +52,15 @@
                 <p>{post.meta.summary}</p>
               {/if}
             </a>
-            <div class="mt-auto flex flex-col md:flex-row gap-4 justify-between">
+            <div
+              class="mt-auto flex flex-col md:flex-row gap-4 justify-between"
+            >
               <p>
-                {(dateFormatted = formatDate(post.meta.date, dateFormatted, newOptions))}
+                {(dateFormatted = formatDate(
+                  post.meta.date,
+                  dateFormatted,
+                  newOptions
+                ))}
               </p>
 
               <div class="flex flex-wrap gap-x-4 gap-y-2">

@@ -4,6 +4,6 @@
       class="relative z-10 pl-1 font-serif text-xl before:content-[''] before:block before:absolute before:bottom-0 before:left-0 before:-z-10 before:w-full before:h-full before:bg-gradient-to-r before:from-platinum"
       href="/">.CC</a
     >
-    <p class="text-lg">&copy; {new Date().getFullYear()}</p>
+    <p class="text-lg">&copy; {new Date().getFullYear()} The Cosy Coder</p>
   </section>
 </footer>
