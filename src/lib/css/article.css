@@ -6,6 +6,11 @@
   @apply my-6 text-lg;
 }
 
+.article p a,
+.article li a {
+  @apply text-brandeis;
+}
+
 .article h1,
 .article h2,
 .article h3,

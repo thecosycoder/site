@@ -1,4 +1,4 @@
-import { error } from '@sveltejs/kit';
+// import { error } from '@sveltejs/kit';
 
 export const load = async ({ params }) => {
   const post = await import(`../../../lib/posts/${params.slug}.md`);
@@ -6,11 +6,11 @@ export const load = async ({ params }) => {
   const Content = post.default;
 
   // Fix this
-  if (!post) {
-    error(404, {
-      message: 'Not found'
-    });
-  }
+  //   if (!post) {
+  //     error(404, {
+  //       message: 'Not found'
+  //     });
+  //   }
 
   return {
     title,

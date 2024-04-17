@@ -18,6 +18,6 @@ export const load = async ({ url, fetch }) => {
   return {
     posts,
     uniqueTags,
-    currentRoute,
+    currentRoute
   };
 };
